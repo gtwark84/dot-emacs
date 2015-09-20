@@ -1,0 +1,3 @@
+* Geoff Wark's GNU Emacs Config
+
+*NO SUPPORT WILL BE PROVIDED!!*
