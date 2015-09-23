@@ -12,7 +12,7 @@
 (make-face-italic 'font-lock-comment-face)
 
 (add-hook 'prog-mode-hook 'hl-indent-mode)
-(add-hook 'find-file-hook (lambda () (interactive) (column-marker-1 80)))
+(add-hook 'find-file-hook (lambda () (interactive) (column-marker-1 81)))
 
 (set-face-attribute 'cursor         nil :background "#FF0000")
 (set-face-attribute 'default        nil :height          150)
