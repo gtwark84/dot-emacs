@@ -42,3 +42,6 @@
 (setq         web-mode-markup-indent-offset 2)
 
 (setq web-mode-enable-auto-pairing -1)
+
+; OS X Scrolling
+(setq mouse-wheel-scroll-amount (quote (0.01)))
