@@ -1,10 +1,13 @@
 ;;; nav.el -- Navigation and file formatting
 
+(require 'edit-server)
+  (edit-server-start)
 (require 'ido-vertical-mode)
 (require 'rbenv)
 (require 'smartparens-config)
 (require 'web-mode)
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (setq web-mode-enable-auto-pairing -1)
 
 
 (when (memq window-system '(mac ns))
@@ -20,16 +23,14 @@
   (ido-vertical-mode 1)
     (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (smex-initialize)
-
-; hyphen on space for Smex
-(defadvice smex (around space-inserts-hyphen activate compile)
-  (let ((ido-cannot-complete-command
-	 `(lambda ()
-	    (interactive)
-	    (if (string= " " (this-command-keys))
-		(insert ?-)
-	      (funcall ,ido-cannot-complete-command)))))
-    ad-do-it))
+  (defadvice smex (around space-inserts-hyphen activate compile)
+    (let ((ido-cannot-complete-command
+           `(lambda ()
+              (interactive)
+              (if (string= " " (this-command-keys))
+                  (insert ?-)
+                (funcall ,ido-cannot-complete-command)))))
+      ad-do-it))
 
 (projectile-global-mode)
 (smartparens-global-mode 1)
@@ -41,7 +42,4 @@
 (setq         css-indent-offset             2)
 (setq         web-mode-markup-indent-offset 2)
 
-(setq web-mode-enable-auto-pairing -1)
-
-; OS X Scrolling
 (setq mouse-wheel-scroll-amount (quote (0.01)))

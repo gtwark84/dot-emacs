@@ -18,7 +18,7 @@
 (set-face-attribute 'default        nil :height          150)
 (set-face-attribute 'hl-indent-face nil :background    "#444")
 (set-face-attribute 'region         nil :background   "white"
-		                                    :foreground   "black")
+                                        :foreground   "black")
 
 (global-hl-line-mode    1)
 (my-global-rainbow-mode 1)
