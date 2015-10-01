@@ -19,7 +19,7 @@
 (set-face-attribute 'region         nil :background   "white"
                                         :foreground   "black")
 
-(display-time           1)
+(display-time-mode      1)
 (display-battery-mode   1)
 (global-hl-line-mode    1)
 (my-global-rainbow-mode 1)
