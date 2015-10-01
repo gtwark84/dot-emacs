@@ -1,7 +1,9 @@
 ;;; ui.el -- UI/UX related customizations
 
 (require 'column-marker)
+  (add-hook 'find-file-hook (lambda () (interactive) (column-marker-1 81)))
 (require 'hl-indent)
+  (add-hook 'prog-mode-hook 'hl-indent-mode)
 (require 'linum-relative)
 
 
@@ -11,15 +13,14 @@
 (load-theme 'zenburn t)
 (make-face-italic 'font-lock-comment-face)
 
-(add-hook 'prog-mode-hook 'hl-indent-mode)
-(add-hook 'find-file-hook (lambda () (interactive) (column-marker-1 81)))
-
 (set-face-attribute 'cursor         nil :background "#FF0000")
 (set-face-attribute 'default        nil :height          150)
 (set-face-attribute 'hl-indent-face nil :background    "#444")
 (set-face-attribute 'region         nil :background   "white"
                                         :foreground   "black")
 
+(display-time           1)
+(display-battery-mode   1)
 (global-hl-line-mode    1)
 (my-global-rainbow-mode 1)
 (nyan-mode              1)

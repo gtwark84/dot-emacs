@@ -3,9 +3,9 @@
 (run-with-idle-timer
  5 nil
  (lambda ()
-   (setq gc-cons-threshold 1000000)
+   (setq     gc-cons-threshold 1000000)
    (message "gc-cons-threshold restored to %S"
-            gc-cons-threshold)))
+             gc-cons-threshold)))
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
