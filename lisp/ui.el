@@ -35,3 +35,6 @@
 
 (add-hook 'emacs-startup-hook (lambda () (toggle-frame-maximized)))
 (add-hook 'emacs-startup-hook (lambda () (split-window-right)))
+
+; Disable bell for now
+;(setq ring-bell-function 'ignore)
